@@ -1,5 +1,5 @@
 import { FC, memo } from "react"
 
 export const Setting: FC = memo(() => {
-  return <p>ログイン画面です</p>
+  return <p>設定画面です</p>
 });
