@@ -1,9 +1,9 @@
 import { FC, memo } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Login } from "../components/Login";
-import { Home } from "../components/Home";
+import { Login } from "../components/pages/Login";
+import { Home } from "../components/pages/Home";
 import { HomeRoutes } from "./HomeRoutes";
-import { Page404 } from "../components/Page404";
+import { Page404 } from "../components/pages/Page404";
 
 export const Router: FC = memo(() => {
   return (

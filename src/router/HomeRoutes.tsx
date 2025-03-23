@@ -1,5 +1,5 @@
-import { Setting } from "../components/Setting";
-import { UserManagement } from "../components/UserManagement";
+import { Setting } from "../components/pages/Setting";
+import { UserManagement } from "../components/pages/UserManagement";
 
 export const HomeRoutes = [
   {
