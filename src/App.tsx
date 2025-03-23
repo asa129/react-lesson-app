@@ -1,5 +1,7 @@
-import { ChakraProvider, Button } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme/theme';
+import { BrowserRouter } from "react-router-dom";
+import { Router } from './router/Router';
 import './App.css'
 
 function App() {
@@ -7,8 +9,9 @@ function App() {
   return (
     <>
       <ChakraProvider theme={theme}>
-        <Button colorScheme='teal'>Click me!</Button>
-        <p>あああああああああああああああ</p>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
       </ChakraProvider>
     </>
   )
