@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Login } from "../components/Login";
 import { Home } from "../components/Home";
 import { HomeRoutes } from "./HomeRoutes";
+import { Page404 } from "../components/Page404";
 
 export const Router: FC = memo(() => {
   return (
@@ -13,6 +14,7 @@ export const Router: FC = memo(() => {
           <Route key={props.path} path={props.path} element={props.children} />
         ))}
       </Route>
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 });
