@@ -7,7 +7,7 @@ export const HomeRoutes = [
     children: <Setting />,
   },
   {
-    path: "userManagement",
+    path: "user_management",
     children: <UserManagement />,
   },
 ];
