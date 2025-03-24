@@ -1,5 +1,6 @@
 import { FC, memo, ReactNode } from "react";
 import { Header } from "../organisms/layout/Header";
+import { Box } from "@chakra-ui/react";
 
 type Props = {
   children: ReactNode;
@@ -10,13 +11,7 @@ export const HeaderLayout: FC<Props> = memo((props) => {
   return (
     <>
       <Header />
-      <div
-        style={{
-          paddingTop: "50px", // ヘッダーの高さと同じ値
-        }}
-      >
-        {children}
-      </div>
+      <Box paddingTop="50">{children}</Box>
     </>
   );
 });
