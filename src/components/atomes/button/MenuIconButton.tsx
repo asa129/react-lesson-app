@@ -15,7 +15,7 @@ type Props = {
   onClose: () => void;
 };
 
-export const HumbergerButton: FC<Props> = memo((props) => {
+export const MenuIconButton: FC<Props> = memo((props) => {
   const { isOpen, onOpen, onClose } = props;
   return (
     <>
