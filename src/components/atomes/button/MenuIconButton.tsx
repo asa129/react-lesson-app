@@ -1,22 +1,13 @@
 import { FC, memo } from "react";
-import {
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  DrawerOverlay,
-  IconButton,
-} from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 type Props = {
-  isOpen: boolean;
   onOpen: () => void;
-  onClose: () => void;
 };
 
 export const MenuIconButton: FC<Props> = memo((props) => {
-  const { isOpen, onOpen, onClose } = props;
+  const { onOpen } = props;
   return (
     <>
       <IconButton
@@ -27,17 +18,6 @@ export const MenuIconButton: FC<Props> = memo((props) => {
         display={{ base: "block", md: "none" }}
         onClick={onOpen}
       />
-      <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay>
-          <DrawerContent>
-            <DrawerBody p={0} bg="gray.100">
-              <Button w="100%">TOP</Button>
-              <Button w="100%">ユーザー一覧</Button>
-              <Button w="100%">設定</Button>
-            </DrawerBody>
-          </DrawerContent>
-        </DrawerOverlay>
-      </Drawer>
     </>
   );
 });

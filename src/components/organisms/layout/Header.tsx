@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Link, useDisclosure } from "@chakra-ui/react";
 import { FC, memo } from "react";
 import { MenuIconButton } from "../../atomes/button/MenuIconButton";
+import { MenuDrawer } from "../../molecules/MenuDrawer";
 
 export const Header: FC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,8 +32,9 @@ export const Header: FC = memo(() => {
             </Box>
             <Link>設定</Link>
           </Flex>
-          <MenuIconButton isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+          <MenuIconButton onOpen={onOpen} />
         </Flex>
+        <MenuDrawer isOpen={isOpen} onClose={onClose} />
       </Box>
     </>
   );
