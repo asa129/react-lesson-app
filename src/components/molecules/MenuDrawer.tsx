@@ -21,7 +21,7 @@ export const MenuDrawer: FC<Props> = memo((props) => {
           <DrawerContent>
             <DrawerBody p={0} bg="gray.100">
               <Button w="100%">TOP</Button>
-              <Button w="100%">ユーザー一覧</Button>
+              <Button w="100%">ユーザー管理一覧</Button>
               <Button w="100%">設定</Button>
             </DrawerBody>
           </DrawerContent>
