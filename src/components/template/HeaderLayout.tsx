@@ -11,7 +11,7 @@ export const HeaderLayout: FC<Props> = memo((props) => {
   return (
     <>
       <Header />
-      <Box paddingTop="50">{children}</Box>
+      <Box pt={50}>{children}</Box>
     </>
   );
 });
