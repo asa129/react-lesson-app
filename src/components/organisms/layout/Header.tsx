@@ -10,7 +10,7 @@ export const Header: FC = memo(() => {
   const onClickHome = () => {
     navigate("/home");
   };
-  const onClickUser = () => {
+  const onClickUserManagement = () => {
     navigate("/home/user_management");
   };
   const onClickSetting = () => {
@@ -43,13 +43,19 @@ export const Header: FC = memo(() => {
             display={{ base: "none", md: "flex" }}
           >
             <Box pr={4} pl={4}>
-              <Link onClick={onClickUser}>ユーザー管理一覧</Link>
+              <Link onClick={onClickUserManagement}>ユーザー管理一覧</Link>
             </Box>
             <Link onClick={onClickSetting}>設定</Link>
           </Flex>
           <MenuIconButton onOpen={onOpen} />
         </Flex>
-        <MenuDrawer isOpen={isOpen} onClose={onClose} />
+        <MenuDrawer
+          isOpen={isOpen}
+          onClose={onClose}
+          onClickHome={onClickHome}
+          onClickUserManagement={onClickUserManagement}
+          onClickSetting={onClickSetting}
+        />
       </Box>
     </>
   );
