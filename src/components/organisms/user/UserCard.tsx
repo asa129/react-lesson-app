@@ -4,10 +4,11 @@ import { FC, memo } from "react";
 type Props = {
   nickName: string;
   name: string;
+  onClick: () => void;
 };
 
 export const UserCard: FC<Props> = memo((props) => {
-  const { nickName, name } = props;
+  const { nickName, name, onClick } = props;
   return (
     <>
       <Box
@@ -18,6 +19,7 @@ export const UserCard: FC<Props> = memo((props) => {
         boxShadow="md"
         p={4}
         _hover={{ cursor: "pointer", opacity: 0.8 }}
+        onClick={onClick}
       >
         <Stack textAlign="center">
           <Image
