@@ -10,6 +10,7 @@ import { UserCard } from "../organisms/user/UserCard";
 import { useAllUsers } from "../../hooks/useAllUsers";
 import { UserDetailModal } from "../organisms/user/UserDetailModal";
 import { useSelectUser } from "../../hooks/useSelectUser";
+import { useLoginUser } from "../../hooks/useLoginUser";
 
 export const UserManagement: FC = memo(() => {
   const { allUsers, users, loading } = useAllUsers();
@@ -23,6 +24,8 @@ export const UserManagement: FC = memo(() => {
     },
     [users, onSelectUser, onOpen]
   );
+
+  const { loginUser } = useLoginUser();
 
   return (
     <>
@@ -48,6 +51,7 @@ export const UserManagement: FC = memo(() => {
         isOpen={isOpen}
         onClose={onClose}
         selectedUser={selectedUser}
+        disabledFlag={loginUser === null ? true : !loginUser.isAdimn}
       />
     </>
   );

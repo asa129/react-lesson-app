@@ -5,24 +5,27 @@ import {
   SetStateAction,
   useState,
 } from "react";
-import { User } from "../../types/api/user";
+import { User } from "../../types/api/User";
 
-type LoginUserContextType = {
-  loginUser: User | null;
-  setLoginUser: Dispatch<SetStateAction<User | null>>;
+type LoginUser = User & { isAdimn: boolean };
+
+export type LoginUserContextType = {
+  loginUser: LoginUser | null;
+  setLoginUser: Dispatch<SetStateAction<LoginUser | null>>;
 };
 
-const LoginUserContext = createContext<LoginUserContextType>(
+export const LoginUserContext = createContext<LoginUserContextType | undefined>(
   {} as LoginUserContextType
 );
 
-export const LoguinUserProvider = (props: { children: ReactNode }) => {
+export const LoginUserProvider = (props: { children: ReactNode }) => {
+  const [loginUser, setLoginUser] = useState<LoginUser | null>(null);
   const { children } = props;
-  const [loginUser, setLoginUser] = useState<User | null>(null);
-
   return (
-    <LoginUserContext.Provider value={{ loginUser, setLoginUser }}>
-      {children}
-    </LoginUserContext.Provider>
+    <>
+      <LoginUserContext.Provider value={{ loginUser, setLoginUser }}>
+        {children}
+      </LoginUserContext.Provider>
+    </>
   );
 };
