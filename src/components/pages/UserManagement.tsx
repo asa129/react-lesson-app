@@ -17,10 +17,12 @@ export const UserManagement: FC = memo(() => {
   useEffect(() => allUsers(), []);
   const { onSelectUser, selectedUser } = useSelectUser();
 
-  const onClickUser = useCallback((id: number) => {
-    onSelectUser({ id, users });
-    onOpen();
-  }, []);
+  const onClickUser = useCallback(
+    (id: number) => {
+      onSelectUser({ id, users, onOpen });
+    },
+    [users, onSelectUser, onOpen]
+  );
 
   return (
     <>
